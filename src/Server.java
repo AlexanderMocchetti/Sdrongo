@@ -7,9 +7,9 @@ public class Server {
     public static void main(String[] args) throws IOException {
 
         Hashtable<String, String> table = new Hashtable<>(Map.of(
-                "Ciucciamelo?", "no",
-                "Porco dio?", "si",
-                "Marra", "Gay"
+                "Ti piace la pizza?", "si",
+                "Il nome del presidente della repubblica?", "Sergio Mattarella",
+                "Sarnelli", "G"
         ));
 
         ServerSocket serverSocket = new ServerSocket(8080);
