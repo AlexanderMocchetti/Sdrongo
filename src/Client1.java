@@ -1,9 +1,12 @@
 import java.net.*;
 import java.io.*;
 
-public class Client {
+public class Client1 {
     public static void main(String[] args) throws IOException {
         Socket socket = new Socket("localhost", 8080);
+
+        System.out.println("Connesso al server");
+
         PrintWriter serverOut =
                 new PrintWriter(socket.getOutputStream(), true);
         BufferedReader serverIn =
@@ -12,14 +15,10 @@ public class Client {
         BufferedReader stdIn =
                 new BufferedReader(
                         new InputStreamReader(System.in));
-        System.out.println(serverIn.readLine());
 
-        String messaggioClient = stdIn.readLine();
-        serverOut.println(messaggioClient);
 
-        String indovinello = stdIn.readLine();
-        serverOut.println(indovinello);
+        String messaggioDalServer = serverIn.readLine();
 
-        System.out.println(serverIn.readLine());
+        System.out.println(messaggioDalServer);
     }
 }
